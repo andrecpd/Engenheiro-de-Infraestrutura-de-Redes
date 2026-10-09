@@ -1,0 +1,7 @@
+all:
+  children:
+    lab_local:
+      hosts:
+        localhost:
+          ansible_connection: local
+          lab_environment: sandbox
