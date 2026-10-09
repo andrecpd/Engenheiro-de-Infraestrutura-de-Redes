@@ -1,0 +1,11 @@
+---
+- name: Collect basic facts from the local sandbox
+  hosts: lab_local
+  gather_facts: true
+  tasks:
+    - name: Display host and operating system
+      ansible.builtin.debug:
+        msg:
+          - "Host: {{ inventory_hostname }}"
+          - "OS family: {{ ansible_facts['os_family'] | default('unknown') }}"
+          - "Python: {{ ansible_facts['python_version'] | default('unknown') }}"
